@@ -6,9 +6,11 @@ function App() {
   const state = useCountStore()
   const count = state.count 
   이런 식으로도 가져올 수 있지만, 모든 상태 변경에 반응해서 리렌더링 되기 때문에 성능이 떨어질 수 있음
-  */}
+
   const increase = useCountStore((state) => state.increase) 
   const decrease = useCountStore((state) => state.decrease)
+  */}
+  const { increase, decrease } = useCountStore((state) => state.action) // action은 객체로 묶어서 가져옴
   return (
     <>
       <h2>Count: {count}</h2>
