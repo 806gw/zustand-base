@@ -10,12 +10,13 @@ function App() {
   const increase = useCountStore((state) => state.increase) 
   const decrease = useCountStore((state) => state.decrease)
   */}
-  const { increase, decrease } = useCountStore((state) => state.action) // action은 객체로 묶어서 가져옴
+  const { increase, decrease, reset } = useCountStore((state) => state.action) // action은 객체로 묶어서 가져옴
   return (
     <>
       <h2>Count: {count}</h2>
       <button onClick={increase}>+</button>
       <button onClick={decrease}>-</button>
+      <button onClick={reset}>Reset</button>
     </>
   )
 }
